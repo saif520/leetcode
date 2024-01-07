@@ -25,3 +25,5 @@ function caseOne(arr,k){
 function caseTwo(arr,k){
     return caseOne(arr.reverse(),-k).reverse();
 }
+
+/////////////
