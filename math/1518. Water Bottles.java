@@ -8,8 +8,7 @@ class Solution {
             int r=nb%ne;
             ans+=t;
             nb=t+r;
-        }
-        
+        }       
         return ans;
     }
 }
