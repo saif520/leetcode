@@ -1,19 +1,24 @@
+// User function Template for Java
+
 class Solution {
-    public boolean isCyclic(int V, int[][] edges) {
-        // code here
-         // Build adjacency list
+    public boolean isPossible(int N, int P, int[][] prerequisites) {
+        // Your Code goes here
+         // Create adjacency list
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
-        for (int i = 0; i < V; i++) {
+        for (int i = 0; i < N; i++) {
             adj.add(new ArrayList<>());
         }
 
-        for (int[] e : edges) {
-            adj.get(e[0]).add(e[1]);
+        // Correct edge direction: v -> u
+        for (int i = 0; i < P; i++) {
+            int u = prerequisites[i][0];
+            int v = prerequisites[i][1];
+            adj.get(v).add(u);
         }
-
-        // Indegree array
-        int[] indegree = new int[V];
-        for (int i = 0; i < V; i++) {
+        
+         // Indegree array
+        int[] indegree = new int[N];
+        for (int i = 0; i < N; i++) {
             for (int it : adj.get(i)) {
                 indegree[it]++;
             }
@@ -21,7 +26,7 @@ class Solution {
 
         // Queue for nodes with indegree 0
         Queue<Integer> q = new LinkedList<>();
-        for (int i = 0; i < V; i++) {
+        for (int i = 0; i < N; i++) {
             if (indegree[i] == 0) {
                 q.add(i);
             }
@@ -41,7 +46,7 @@ class Solution {
             }
         }
 
-        if(cnt==V) return true;
+        if(cnt==N) return true;
         return false;
     }
 }
