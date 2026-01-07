@@ -48,7 +48,7 @@ public class Solution {
         // Recursively check for flip equivalence for both children without flipping and with flipping
         // Check both possibilities: not flipped and flipped
         boolean checkWithoutFlip = isFlipEquiv(node1.left, node2.left) && isFlipEquiv(node1.right, node2.right);
-        boolean checkWithFlip = isFlipEquiv(node1.left, node2.right) && isFlipEquiv(node1.right, node2.left);
+        boolean chec kWithFlip = isFlipEquiv(node1.left, node2.right) && isFlipEquiv(node1.right, node2.left);
       
         // Return true if either possibility resulted in flip equivalence
         return checkWithoutFlip || checkWithFlip;
