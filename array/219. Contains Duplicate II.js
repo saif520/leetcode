@@ -11,5 +11,5 @@ var containsNearbyDuplicate = function(nums, k) {
             }
         }
     }
-    return false;
+    return false; 
 };
