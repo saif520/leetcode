@@ -9,6 +9,9 @@ public class Main {
             for (int it : ds) {
                 System.out.print(it + " ");
             }
+            if(ds.size()==0){
+                System.out.println("{}");
+            }
             System.out.println();
             return;
         }
